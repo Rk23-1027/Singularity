@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-shadow: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    width: 100vh;
+    height: 100vw;
+}
+
+.logo {
+    font-size: 2.5rem;
+    text-decoration: none;
+    margin-left: 1rem;
+    color: #BC13FE;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    padding: 10px 0;
+    background: black;
+
+}
+
+.nav-menu {
+    display: flex;
+    margin-right: 1.5rem;
+}
+
+.nav-menu li {
+    list-style: none;
+    padding: 5px 8px;
+    margin: 0 5px;
+}
+
+.nav-menu li a{
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: white;
+}
+
+.nav-menu li a:hover {
+    color: #BC13FE;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Home styling */
+.home-container {
+    width: 100vw;
+    height: 100vh;
+    background: url(images/saturn-bg.jpg)no-repeat center center/cover;
+    color: silver;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.home-container p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    width: 75%;
+    padding: 75px 0 0 0;
+    text-align: center;
+}
+
+.home-container h3{
+    padding: 7.1rem 0 0 0;
+    font-weight: 500;
+    animation: transformText 1s 1;
+}
+
+@keyframes transformText {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.home-container h3 span {
+    color: #BC13FE;
+}
+
+@keyframes slideInFromLeft {
+    0%{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBackToLeft {
+    0%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100%{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+.images img.show{
+    animation: slideInFromLeft 1s ease-out forwards;
+    opacity: 0;
+    transform: translateX(0);
+}
+
+.images img.hide{
+    animation: slideBackToleft 1s ease-in forwards;
+    opacity: 0;
+    transform:translateX(-100%);
+}
